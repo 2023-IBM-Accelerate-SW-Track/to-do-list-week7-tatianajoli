@@ -12,9 +12,9 @@ import { Card, Grid, ListItemButton, ListItemText, Checkbox} from "@mui/material
 const Todos = ({ todos, deleteTodo }) => {
   const todoList = todos.length ? (
     todos.map((todo) => {
-      let color = "#ffffffff"
+      let color = "white"
       if (new Date(todo.duedate) < new Date()){
-        color = 'red'
+        color = "#fc4eae"
       }
       console.log(color)
       return (
@@ -32,7 +32,7 @@ const Todos = ({ todos, deleteTodo }) => {
       );
     })
   ) : (
-    <p>You have no todo's left </p>
+    <p>You have no todos left</p>
   );
   // Lastly, return the todoList constant that we created above to show all of the items on the screen.
   return (

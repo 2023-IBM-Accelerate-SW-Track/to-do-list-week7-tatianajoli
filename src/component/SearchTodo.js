@@ -1,6 +1,14 @@
 import React, { Component } from "react";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, createTheme, ThemeProvider } from "@mui/material";
 import Axios from "axios";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#801aad',
+    },
+  },
+});
 
 class SearchTodo extends Component {
   
@@ -49,16 +57,17 @@ class SearchTodo extends Component {
             onChange={this.handleChange}
             value={this.state.value}
           /> 
+          <ThemeProvider theme={theme}>
           <Button
-            id="search-item-button"
-            name='submit'
-            style={{ marginLeft: "10px",marginTop:10 }}
+            style={{ marginLeft: "10px" }}
             onClick={this.handleSubmit}
             variant="contained"
             color="primary"
+            data-testid="new-item-button"
           >
             Search
           </Button>
+        </ThemeProvider>
         </form>
         <div>{this.state.tmpdata}</div>
       </div>

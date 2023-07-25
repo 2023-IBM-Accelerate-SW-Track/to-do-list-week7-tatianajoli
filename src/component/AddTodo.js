@@ -1,7 +1,15 @@
 import React, { Component } from "react";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, createTheme, ThemeProvider } from "@mui/material";
 import { DesktopDatePicker , LocalizationProvider} from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#801aad',
+    },
+  },
+});
 
 class AddTodo extends Component {
   // Create a local react state of the this component with both content date property set to nothing.
@@ -72,14 +80,17 @@ class AddTodo extends Component {
               renderInput={(params) => <TextField {...params} />}
           />
         </LocalizationProvider>
-        <Button
-          style={{ marginLeft: "10px" }}
-          onClick={this.handleSubmit}
-          variant="contained"
-          color="primary"
-        >
-          Add
-        </Button>
+        <ThemeProvider theme={theme}>
+          <Button
+            style={{ marginLeft: "10px" }}
+            onClick={this.handleSubmit}
+            variant="contained"
+            color="primary"
+            data-testid="new-item-button"
+          >
+            Add
+          </Button>
+        </ThemeProvider>
       </div>
     );
   }
