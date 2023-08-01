@@ -52,7 +52,7 @@ class SearchTodo extends Component {
         <form onSubmit={this.handleSubmit}>
           <TextField
             id="search-item-input"
-            label="Search for ToDo Item"
+            label="Search for Todo Item"
             variant="outlined"
             onChange={this.handleChange}
             value={this.state.value}

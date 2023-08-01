@@ -1,5 +1,6 @@
 import * as api from './services/api';
 import React, { useState } from 'react';import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavbarComp from './component/navigation/NavbarComp';
 
